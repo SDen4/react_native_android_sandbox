@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "rn_android_sandbox",
+    "name": "rn_a_sandbox",
     "slug": "rn_android_sandbox",
     "version": "1.0.0",
     "orientation": "default",
@@ -16,17 +16,13 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+      },
+      "package": "com.denis_s.rn_android_sandbox_app",
+      "versionCode": 1
     }
   }
 }
