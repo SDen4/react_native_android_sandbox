@@ -6,8 +6,16 @@ export const MainScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Main Screen</Text>
-            <Button color={THEME.DANGER_COLOR} title='Go to About' onPress={() => navigation.push('About')} />
-            <Button color={THEME.DANGER_COLOR} title='Go to List' onPress={() => navigation.push('List')} />
+            <Button
+                color={THEME.DANGER_COLOR}
+                title="Go to About"
+                onPress={() => navigation.push('About')}
+            />
+            <Button
+                color={THEME.DANGER_COLOR}
+                title="Go to List"
+                onPress={() => navigation.push('List')}
+            />
         </View>
     );
 };
