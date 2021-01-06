@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, Button } from 'react-native';
+
 import { THEME } from '../theme';
 
 export const MainScreen = ({ navigation }) => {
