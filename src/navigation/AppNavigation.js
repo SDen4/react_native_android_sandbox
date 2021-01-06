@@ -1,9 +1,8 @@
 import React from 'react';
-import { Alert, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { MainScreen } from '../screens/MainScreen';
@@ -21,29 +20,17 @@ const stackOptions = {
     headerTintColor: '#fff',
 };
 
-const MainNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={stackOptions}>
-            <Stack.Screen
-                name='Main'
-                component={MainScreen}
-                options={{
-                    headerLeft: () => (
-                        <MaterialIcons.Button
-                            onPress={() => Alert.alert('Test Button')}
-                            name='menu'
-                            size={30}
-                            color='#fff'
-                            style={styles.drawer}
-                        ></MaterialIcons.Button>
-                    ),
-                }}
-            />
-            <Stack.Screen name='List' component={ListScreen} />
-            <Stack.Screen name='About' component={AboutScreen} />
-        </Stack.Navigator>
-    );
-};
+const optionsDrawer = ({ navigation }) => ({
+    headerLeft: () => (
+        <MaterialIcons.Button
+            onPress={() => navigation.toggleDrawer()}
+            name='menu'
+            size={30}
+            color='#fff'
+            style={styles.drawer}
+        ></MaterialIcons.Button>
+    ),
+});
 
 const styles = StyleSheet.create({
     drawer: {
@@ -52,10 +39,20 @@ const styles = StyleSheet.create({
     },
 });
 
+const MainNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={stackOptions}>
+            <Stack.Screen name='Main' component={MainScreen} options={optionsDrawer} />
+            <Stack.Screen name='List' component={ListScreen} />
+            <Stack.Screen name='About' component={AboutScreen} />
+        </Stack.Navigator>
+    );
+};
+
 const ListNavigator = () => {
     return (
         <Stack.Navigator screenOptions={stackOptions}>
-            <Stack.Screen name='List' component={ListScreen} />
+            <Stack.Screen name='List' component={ListScreen} options={optionsDrawer} />
         </Stack.Navigator>
     );
 };
@@ -63,7 +60,7 @@ const ListNavigator = () => {
 const AboutNavigator = () => {
     return (
         <Stack.Navigator screenOptions={stackOptions}>
-            <Stack.Screen name='About' component={AboutScreen} />
+            <Stack.Screen name='About' component={AboutScreen} options={optionsDrawer} />
         </Stack.Navigator>
     );
 };
