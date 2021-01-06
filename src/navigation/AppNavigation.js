@@ -32,13 +32,6 @@ const optionsDrawer = ({ navigation }) => ({
     ),
 });
 
-const styles = StyleSheet.create({
-    drawer: {
-        backgroundColor: THEME.MAIN_COLOR,
-        paddingRight: 0,
-    },
-});
-
 const MainNavigator = () => {
     return (
         <Stack.Navigator screenOptions={stackOptions}>
@@ -67,10 +60,36 @@ const AboutNavigator = () => {
 
 const DrawerNavigator = () => {
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name='Main' component={MainNavigator} />
-            <Drawer.Screen name='List' component={ListNavigator} />
-            <Drawer.Screen name='About' component={AboutNavigator} />
+        <Drawer.Navigator
+            drawerStyle={{
+                backgroundColor: THEME.DRAWER_BG_COLOR,
+                width: '40%',
+            }}
+            drawerContentOptions={{
+                inactiveTintColor: THEME.MAIN_COLOR,
+                activeTintColor: THEME.BUTTONS_COLOR,
+                labelStyle: {
+                    fontWeight: 'bold',
+                    fontSize: 18,
+                    fontStyle: 'italic',
+                },
+            }}
+        >
+            <Drawer.Screen
+                name='Main'
+                component={MainNavigator}
+                options={{ drawerLabel: 'Главная' }}
+            />
+            <Drawer.Screen
+                name='List'
+                component={ListNavigator}
+                options={{ drawerLabel: 'Список' }}
+            />
+            <Drawer.Screen
+                name='About'
+                component={AboutNavigator}
+                options={{ drawerLabel: 'О нас' }}
+            />
         </Drawer.Navigator>
     );
 };
@@ -82,3 +101,10 @@ export const AppNavigation = () => {
         </NavigationContainer>
     );
 };
+
+const styles = StyleSheet.create({
+    drawer: {
+        backgroundColor: THEME.MAIN_COLOR,
+        paddingRight: 0,
+    },
+});
