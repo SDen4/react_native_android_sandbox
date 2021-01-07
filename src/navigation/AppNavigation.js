@@ -21,7 +21,7 @@ const stackOptions = {
 };
 
 const optionsDrawer = ({ navigation }) => ({
-    headerLeft: () => (
+    headerRight: () => (
         <MaterialIcons.Button
             onPress={() => navigation.toggleDrawer()}
             name='menu'
@@ -74,6 +74,7 @@ const DrawerNavigator = () => {
                     fontStyle: 'italic',
                 },
             }}
+            drawerPosition='right'
         >
             <Drawer.Screen
                 name='Main'
