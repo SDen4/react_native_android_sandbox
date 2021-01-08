@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#888888',
     },
     text: {
-        fontWeight: 'bold',
+        fontSize: 32,
+        fontFamily: 'goldman-regular',
         marginBottom: 20,
     },
 });
