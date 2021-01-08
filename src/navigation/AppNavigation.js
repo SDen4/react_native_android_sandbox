@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -9,6 +9,7 @@ import { MainScreen } from '../screens/MainScreen';
 import { AboutScreen } from '../screens/AboutScreen';
 import { ListScreen } from '../screens/ListScreen';
 import { AdditionScreen } from '../screens/AdditionScreen';
+import { BlocksScreen } from '../screens/BlocksScreen';
 import { THEME } from '../theme';
 
 const Drawer = createDrawerNavigator();
@@ -40,6 +41,7 @@ const MainNavigator = () => {
             <Stack.Screen name='List' component={ListScreen} />
             <Stack.Screen name='About' component={AboutScreen} />
             <Stack.Screen name='Addition' component={AdditionScreen} />
+            <Stack.Screen name='Blocks' component={BlocksScreen} />
         </Stack.Navigator>
     );
 };
@@ -64,6 +66,14 @@ const AdditionNavigator = () => {
     return (
         <Stack.Navigator screenOptions={stackOptions}>
             <Stack.Screen name='Addition' component={AdditionScreen} options={optionsDrawer} />
+        </Stack.Navigator>
+    );
+};
+
+const BlocksNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={stackOptions}>
+            <Stack.Screen name='Blocks' component={BlocksScreen} options={optionsDrawer} />
         </Stack.Navigator>
     );
 };
@@ -105,6 +115,11 @@ const DrawerNavigator = () => {
                 name='Addition'
                 component={AdditionNavigator}
                 options={{ drawerLabel: 'Дополнительный' }}
+            />
+            <Drawer.Screen
+                name='Blocks'
+                component={BlocksNavigator}
+                options={{ drawerLabel: 'Блоки' }}
             />
         </Drawer.Navigator>
     );
