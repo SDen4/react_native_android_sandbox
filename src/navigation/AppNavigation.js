@@ -73,7 +73,7 @@ const DrawerNavigator = () => {
         <Drawer.Navigator
             drawerStyle={{
                 backgroundColor: THEME.DRAWER_BG_COLOR,
-                width: '40%',
+                width: '55%',
             }}
             drawerContentOptions={{
                 inactiveTintColor: THEME.MAIN_COLOR,

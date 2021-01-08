@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Button, BackHandler, Alert } from 'react-native
 import Constants from 'expo-constants';
 
 import { THEME } from '../theme';
+import { AppTextGoldmanBold } from '../components/AppTextGoldmanBold';
 
 export const MainScreen = ({ navigation }) => {
     useEffect(() => {
@@ -30,7 +31,7 @@ export const MainScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Main Screen</Text>
+            <AppTextGoldmanBold style={styles.text}>Main Screen</AppTextGoldmanBold>
             <Button
                 color={THEME.DANGER_COLOR}
                 title='Go to About'
@@ -52,7 +53,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        fontSize: 32,
-        fontFamily: 'goldman-bold',
+        fontSize: 32
     },
 });
