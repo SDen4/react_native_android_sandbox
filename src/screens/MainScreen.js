@@ -1,22 +1,27 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet, Text, Button, BackHandler, Alert } from 'react-native';
+import Constants from 'expo-constants';
 
 import { THEME } from '../theme';
 
 export const MainScreen = ({ navigation }) => {
     useEffect(() => {
         const backAction = () => {
-            Alert.alert('Close the app', 'Are you sure to close the app?', [
-                {
-                    text: 'Cancel',
-                    onPress: () => null,
-                    style: 'cancel',
-                },
-                {
-                    text: 'Yes',
-                    onPress: () => BackHandler.exitApp(),
-                },
-            ]);
+            Alert.alert(
+                'Close the app',
+                `Are you sure to close the app? Your status bar's height: ${Constants.statusBarHeight} px.`,
+                [
+                    {
+                        text: 'Cancel',
+                        onPress: () => null,
+                        style: 'cancel',
+                    },
+                    {
+                        text: 'Yes',
+                        onPress: () => BackHandler.exitApp(),
+                    },
+                ]
+            );
             return true;
         };
         const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
