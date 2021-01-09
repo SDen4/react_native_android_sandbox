@@ -4,6 +4,7 @@ import Constants from 'expo-constants';
 
 import { THEME } from '../theme';
 import { AppTextGoldmanBold } from '../components/AppTextGoldmanBold';
+import { AppButton } from '../components/AppButton';
 
 export const MainScreen = ({ navigation }) => {
     useEffect(() => {
@@ -42,6 +43,11 @@ export const MainScreen = ({ navigation }) => {
                 title='Go to List'
                 onPress={() => navigation.push('List')}
             />
+            <AppButton
+                title='test button to blocks'
+                action={() => navigation.push('Blocks')}
+                color={'brown'}
+            />
         </View>
     );
 };
@@ -53,6 +59,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        fontSize: 32
-    },
+        fontSize: 32,
+    }
 });
