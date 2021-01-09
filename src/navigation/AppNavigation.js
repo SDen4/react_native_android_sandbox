@@ -19,6 +19,10 @@ const stackOptions = {
     headerStyle: {
         backgroundColor: THEME.MAIN_COLOR,
     },
+    headerLeftContainerStyle: {
+        backgroundColor: THEME.BUTTONS_COLOR
+    },
+    headerPressColorAndroid: THEME.MAIN_COLOR,
     headerTintColor: '#fff',
 };
 
