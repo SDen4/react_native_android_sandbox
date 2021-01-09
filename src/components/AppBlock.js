@@ -11,14 +11,16 @@ export const AppBlock = (props) => {
 
 const styles = StyleSheet.create({
     default: {
-        minWidth: 150,
-        minHeight: 100,
-        margin: 5,
+        minWidth: 120,
+        minHeight: 80,
+        margin: 15,
         backgroundColor: 'red',
         borderRadius: 10,
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
+        elevation: 7,
+        opacity: 0.7,
     },
     text: {
         fontFamily: 'goldman-regular',
