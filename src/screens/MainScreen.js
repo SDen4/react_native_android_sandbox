@@ -36,22 +36,20 @@ export const MainScreen = ({ navigation }) => {
             <AppTextGoldmanBold style={styles.text}>Main Screen</AppTextGoldmanBold>
             <Button
                 color={THEME.DANGER_COLOR}
-                title='Go to About'
+                title='Simple button'
                 onPress={() => navigation.push('About')}
             />
-            <Button
-                color={THEME.DANGER_COLOR}
-                title='Go to List'
-                onPress={() => navigation.push('List')}
-            />
             <AppButton
-                title='AppButton (to blocks)'
+                title='AppButton'
                 action={() => navigation.push('Blocks')}
                 color={'brown'}
             />
             <AppButtonPro
-                text='AppButtonPro (to Addition)'
+                text='AppButtonPro'
                 action={() => navigation.push('Addition')}
+                gradientColors={["#004d40", "#009688"]}
+                styleButton={styles.appButtonPro_button}
+                styleText={styles.appButtonPro_text}
             />
         </View>
     );
@@ -65,5 +63,11 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 32,
-    }
+    },
+    appButtonPro_button: {
+        borderRadius: 10,
+    },
+    appButtonPro_text: {
+        color: 'orange',
+    },
 });
