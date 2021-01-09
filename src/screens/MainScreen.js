@@ -5,6 +5,7 @@ import Constants from 'expo-constants';
 import { THEME } from '../theme';
 import { AppTextGoldmanBold } from '../components/AppTextGoldmanBold';
 import { AppButton } from '../components/AppButton';
+import { AppButtonPro } from '../components/AppButtonPro';
 
 export const MainScreen = ({ navigation }) => {
     useEffect(() => {
@@ -44,9 +45,13 @@ export const MainScreen = ({ navigation }) => {
                 onPress={() => navigation.push('List')}
             />
             <AppButton
-                title='test button to blocks'
+                title='AppButton (to blocks)'
                 action={() => navigation.push('Blocks')}
                 color={'brown'}
+            />
+            <AppButtonPro
+                text='AppButtonPro (to Addition)'
+                action={() => navigation.push('Addition')}
             />
         </View>
     );
