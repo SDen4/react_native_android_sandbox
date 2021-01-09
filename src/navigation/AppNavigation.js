@@ -79,11 +79,11 @@ const BlocksNavigator = () => {
 };
 
 const DrawerNavigator = () => {
-    const iconHome = <MaterialIcons name="home" size={24} color={THEME.MAIN_COLOR} />
-    const iconList = <MaterialIcons name="list" size={24} color={THEME.MAIN_COLOR} />
-    const iconInfo = <MaterialIcons name="info" size={24} color={THEME.MAIN_COLOR} />
-    const iconAdd = <MaterialIcons name="add-box" size={24} color={THEME.MAIN_COLOR} />
-    const iconBlocks = <MaterialIcons name="check-box-outline-blank" size={24} color={THEME.MAIN_COLOR} />
+    const iconHome = <MaterialIcons name='home' size={24} color={THEME.MAIN_COLOR} />;
+    const iconList = <MaterialIcons name='list' size={24} color={THEME.MAIN_COLOR} />;
+    const iconInfo = <MaterialIcons name='info' size={24} color={THEME.MAIN_COLOR} />;
+    const iconAdd = <MaterialIcons name='add-box' size={24} color={THEME.MAIN_COLOR} />;
+    const iconBlocks = <MaterialIcons name='view-comfortable' size={24} color={THEME.MAIN_COLOR} />;
 
     return (
         <Drawer.Navigator
@@ -110,7 +110,7 @@ const DrawerNavigator = () => {
             <Drawer.Screen
                 name='List'
                 component={ListNavigator}
-                options={{ drawerLabel: 'Список', drawerIcon: () => iconList  }}
+                options={{ drawerLabel: 'Список', drawerIcon: () => iconList }}
             />
             <Drawer.Screen
                 name='About'
