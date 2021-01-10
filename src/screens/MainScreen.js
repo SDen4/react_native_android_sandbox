@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, Text, Button, BackHandler, Alert } from 'react-native';
+import { View, StyleSheet, Button, BackHandler, Alert } from 'react-native';
 import Constants from 'expo-constants';
 
 import { THEME } from '../theme';

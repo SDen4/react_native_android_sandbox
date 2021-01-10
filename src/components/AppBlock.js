@@ -11,8 +11,8 @@ export const AppBlock = (props) => {
 
 const styles = StyleSheet.create({
     default: {
-        minWidth: 120,
-        minHeight: 80,
+        width: 120,
+        height: 80,
         margin: 15,
         backgroundColor: 'red',
         borderRadius: 10,
