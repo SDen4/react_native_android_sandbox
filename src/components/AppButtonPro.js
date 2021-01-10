@@ -18,7 +18,6 @@ export const AppButtonPro = ({ text, action, gradientColors, styleButton, styleT
 const styles = StyleSheet.create({
     container_default: {
         justifyContent: 'center',
-        margin: 5,
     },
     button_default: {
         elevation: 8,
